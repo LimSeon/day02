@@ -38,7 +38,7 @@ JavaScript 수업 내용 정리
         1) 문자열의 길이 : length
         2) 대문자/소문자 : toUpperCase()/toLowerCase()
         3) 문자열에서 특정 인덱스에 위치하는 유니코드 단일문자 반환 : charAt()
-        4) indexof()와 lastIndexof()
+        4) indexOf()와 lastIndexOf()
         5) substring()
         6) split()
 
