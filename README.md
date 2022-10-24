@@ -34,19 +34,26 @@ JavaScript 수업 내용 정리
 ## 05. 문자열과 숫자
 ### 문자열과 숫자
 #### * 문자열 관련 메소드
+        1) 문자열의 길이 : length
+        2) 대문자/소문자 : toUpperCase()/toLowerCase()
+        3) 문자열에서 특정 인덱스에 위치하는 유니코드 단일문자 반환 : charAt()
+        4) indexof()와 lastIndexof()
+        5) substring()
+        6) split()
 
-1. Math 내장 객체(Math.메소드명())
-        1) 절대값 : Math.abs()
-        2) 랜덤값 : Math.random()
-        3) 반올림 : Math.round()
-        4) 버림 : Math.ceil()
-        5) 올림 : Math.floor()
-        6) 제곱급 : Math.sqrt()
+#### * 숫자 관련 메소드
+1. Math 내장 객체(Math.메소드명())   <br>
+        1) 절대값 : Math.abs()      <br>
+        2) 랜덤값 : Math.random()   <br>
+        3) 반올림 : Math.round()    <br>
+        4) 버림 : Math.ceil()       <br>
+        5) 올림 : Math.floor()      <br>
+        6) 제곱급 : Math.sqrt()     <br>
 
 2. 다른 자료형끼리의 산술연산
-        1) 덧셈 연산
-        2) 덧셈을 제외한 나머지 산술연산
-        3) 강제형변환(문자열 => 숫자)
-        ① Number(문자열)
-        ② parseInt(문자열)
-        ③ parseFloat(문자열)
+        1) 덧셈 연산                       <br>
+        2) 덧셈을 제외한 나머지 산술연산     <br>
+        3) 강제형변환(문자열 => 숫자)       <br>
+        ① Number(문자열)                   <br>
+        ② parseInt(문자열)                 <br>
+        ③ parseFloat(문자열)               <br>
