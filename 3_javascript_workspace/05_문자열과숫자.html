@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>문자열과숫자</title>
+    <style>
+        .area{
+            width: 300px;
+            border: 1px solid black;
+        }
+        .big{
+            height: 520px;
+        }
+        .smaill{
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>문자열과 숫자</h1>
+    <h3>* 문자열 관련 메소드</h3>
+
+    <button onclick="showStringMethod();">문자열 처리 메소드</button>
+
+    <div id="area1" class="area big"></div>
+
+    <script>
+        function showStringMethod(){
+
+            var str1 = 'Hello World!';
+
+            var area1 = document.getElementById('area1');
+
+            area1.innerHTML = 'str1 : ' + str1 + '<br>';
+            area1.innerHTML += '문자열의 길이 : ' + str1.length + '<br>';
+            area1.innerHTML += 'toUpperCase() : ' + str1.toUpperCase() + '<br>';
+            area1.innerHTML += 'toLowerCase() : ' + str1.toLowerCase() + '<br>';
+
+            // str1에 대입되어있는 문자열을 출력
+            // 0번째 인덱스 !!
+            // 1번째 인덱스 e
+            // ...
+            // 11번째 인덱스
+
+            var strF = '';
+
+            for(var i = 0; i < str1.length; i++){
+                strF += i + '번째 인덱스 : ' + str1.charAt(i) + '<br>';
+            }
+            area1.innerHTML += strF;
+            // indexof()와 lastIndexof()
+            area1.innerHTML += '앞에서부터 첫 l의 위치(인덱스) : ' + str1.indexOf('l') + '<br>';
+            area1.innerHTML += '뒤에서부터 첫 l의 위치(인덱스) : ' + str1.lastIndexOf('l') + '<br>';
+            // 해당 문자가 존재하지 않을 경우에는?
+            area1.innerHTML += '앞에서부터 첫 a의 위치(인덱스) : ' + str1.indexOf('a') + '<br>';
+            
+            area1.innerHTML += 'substring(시작인덱스) : ' + str1.substring(6) + '<br>';
+            area1.innerHTML += 'substring(시작인덱스, 끝인덱스) : ' + str1.substring(0, 2) + '<br>';    //He
+
+            var str2 = '두리안,드래곤후르츠,파인애플,망고';
+            
+            var fruits = str2.split(',');
+
+            area1.innerHTML += 'fruits : ' + fruits + '<br>';
+            area1.innerHTML += 'fruits : ' + typeof(fruits);
+        }
+    </script>
+
+    <h3>* 숫자(수학) 관련 메소드</h3>
+
+    <button onclick="showMathMethod()">수학 관련 메소드</button>
+    <div id="area2" class="area"></div>
+
+    <script>
+        function showMathMethod(){
+
+            var area2 = document.getElementById('area2');
+
+            // Math 내장 객체 제공 (Math.메소드명())
+            area2.innerHTML += '절댓값 : ' + Math.abs(-123) + '<br>'
+            
+        }
+    </script>
+
+</body>
+</html>
