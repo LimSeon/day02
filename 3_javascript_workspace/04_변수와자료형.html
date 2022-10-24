@@ -126,10 +126,118 @@
             var str = '지역변수';
             // 전역변수명과 중복되는 문제
             var str3 = '새로운 지역변수';
-            str4 = '내가 누구게??'
+            str4 = '내가 누구게??';
+
+            console.log('---str---');
+            console.log(str);
+            // 지역변수명과 전역변수명이 동일한 변수라면 지역변수 호출
+            // 전역변수에 접근하고자 한다면 => windlw.전역변수명 또는 this.전역변수명
+            console.log(window.str);
+            console.log(this.str);
+
+            console.log('---str2---');
+            console.log(str2);
+            console.log(window.str2);
+            console.log(this.str2);
+            // 모두 동일한 결과
+
+            console.log('---str3---');
+            console.log(str3);
+            // 지역변수
+            console.log(window.str3);
+            // undefined(정의되어 있지 않음)
+            console.log(this.str3);
+            
+            console.log('---str4---');
+            console.log(str4);
+            console.log(window.str4);
+            console.log(this.str4);
+            // 모두 동일한 결과
+            // 지역변수가 아니라 전역변수 확정
+            // 변수 선언 시 var를 생략할 경우 전역변수로 취급됨
         }
 
+        function getGlobal(){
+            console.log('전역변수 총출동!!!!!!!');
+            console.log(window.str + " 또는 " + this.str);
+            console.log(str2);
+            console.log(str4);
+        }
     </script>
 
+    <!-- 전역변수를 출력해주는 버튼 -->
+
+    <button onclick="getGlobal();">전역변수내놔~!</button>
+
+    <hr>
+
+    <h3>* 자료형</h3>
+    <p>
+        변수 선언 시 자료형을 별도로 지정하지 않음(자료형의 개념이 없는 것은 아님) <br>
+        -> 변수에 대입되는 값(리터릴)에 따라서 자료형이 자동으로 결정됨 : 타입추론
+    </p>    
+
+    <h4>자바스크립트의 자료형</h4>
+    <ul>
+        <li>string(문자열)</li>
+        <li>number(숫자)</li>
+        <li>boolean(논리값)</li>
+        <li>object(객체)</li>
+        <li>function(함수)</li>
+        <li>undefined(초기화가 아직 진행되지 않은 변수)</li>
+    </ul>
+
+    <button onclick="typeTest()">자료형 테스트</button>
+
+    <div id="area" style="border: 1px solid black;"></div>
+
+    <script>
+        function typeTest(){
+            // 자료형마다 색깔이 다르다
+            var name = '홍길동';
+
+            var age = 15;
+
+            var flag = true;
+
+            var hobby = ['수영', '조깅', '등산'];
+
+            var user = {
+                name : '김세헌',
+                id : 'user01',
+            };
+
+            var testFn = function(){
+                alert('abcdfdf');
+            };
+
+            var noVal;
+
+            // 값 찍어보기
+            var divEl = document.getElementById('area');
+
+            divEl.innerHTML = name + '<br>';        // 홍길동
+            divEl.innerHTML += age + '<br>';        // 15
+            divEl.innerHTML += flag + '<br>';       // true
+            divEl.innerHTML += hobby + '<br>';      // 수영,조깅,등산
+            divEl.innerHTML += user + '<br>';       // [object Object]
+            divEl.innerHTML += testFn + '<br>';     // function(){ alert('abcdfdf'); }
+            divEl.innerHTML += noVal + '<br><br>';      // undefined
+            
+            // 자료형 찍어보기
+            // 자료형을 확인할 때 필요한 함수 : typeof(변수명);
+            divEl.innerHTML += typeof(name) + '<br>';       // string
+            divEl.innerHTML += typeof(age) + '<br>';        // number
+            divEl.innerHTML += typeof(flag) + '<br>';       // boolean
+            divEl.innerHTML += typeof(hobby) + '<br>';      // object   // 배열은 자바스크립트에서 객체다(object타입)
+            divEl.innerHTML += typeof(user) + '<br>';       // object
+            divEl.innerHTML += typeof(testFn) + '<br>';     // function
+            divEl.innerHTML += typeof(noVal) + '<br><br>'   // undefined
+
+        }
+    
+    </script>
+
+    <br><br><br><br><br><br><br><br><br>
 </body>
 </html>
