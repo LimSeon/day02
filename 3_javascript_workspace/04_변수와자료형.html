@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>변수와 자료형</title>
+</head>
+<body>
+
+    <h1>변수와 자료형</h1>
+
+    <h2>변수 선언 시 var뿐만 아니라 let, const를 이용해서 선언 가능</h2>
+    <h3>* var, let, const의 차이점</h3>
+
+    <h4> 1) 변수 선언 방법</h4>
+    <button onclick="defDeclare()">클릭</button>
+
+    <h4> 2) scope(사용가능 범위)</h4>
+    <button onclick="defScope()">요건 클릭이야</button>
+
+    <script>
+        function defDeclare(){
+
+            // 1) var - 중복선언이 가능하다. / 재할당도 가능하다
+            var userId = 'user01';
+            console.log(userId);
+
+            var userId = 'user02';
+            console.log(userId);
+
+            userId = 'user03';
+            console.log(userId);
+
+            console.log('---------------------');
+            
+            // 2) let은 중복선언이 불가능하다.  // 재할당은 가능하다.
+            let userPwd = 'pass01';
+            console.log(userPwd);
+            
+            // let userPwd = 'pass02';
+            // console.log(userPwd);
+            
+            userPwd = 'pass03'; // 재할당은 가능
+            console.log(userPwd);
+            
+            console.log('---------------------');
+
+            // 3) const는 중복선언이 불가능하다. // 재할당 불가능(상수같은 개념 == 한번 초기화된 값 변경X)
+
+            const userName = '홍길동';
+            console.log(userName);
+
+            // const userName = '김길동';
+            // console.log(userName);
+
+            // userName = 홍길동;
+            // console.log(userName);
+
+            // var는 자유롭게 변수 선언, 사용할 수 있다는 장점이 있다.
+            // 하지만 중복된 변수가 남발 / 의도치않게 값이 변경될 수 있음
+            // => 가장 큰 단점
+            // => 보완되서 나온게 let, const
+
+            // 권장사항 : let, const 위주로 사용
+        }
+
+        function defScope(){
+            // 1) var는 functionScope == 변수가 선언된 "함수영역" 내에서 사용 가능
+
+            var name = '홍길동';
+
+            console.log(name);
+
+            if(true){
+                var age = 20;
+            }
+
+            console.log(age);
+            // 사용 가능(defScope(){})
+
+            for(var i = 0; i < 10; i++){}
+
+            console.log(i);
+            // 사용 가능(defScope(){})
+
+            // scopeTest();
+        } 
+
+        // 내가 선언된 함수영역이 아니므로 불가능
+        // function scopeTest(){
+        //     console.log(name);
+        // }
+
+        // 2) let, const는 blockscope == 변수가 선언된 블럭{} 내에서만 사용 가능
+        if(true){
+            let gender = 'M';
+            const hobby = '안경쓰기';
+        }
+
+        // console.log(gender);
+        // console.log(hobby);
+
+    </script>
+
+    <h3>* 변수 선언 위치에 따른 전역변수/지역변수</h3>
+
+    <pre>
+        &lt;script&gt;      <!-- 화면에 꺽세(<>) 표시하는 방법 -->
+            var 변수명;
+            변수명;
+
+            function 함수명(){
+                var 변수명;
+                변수명
+            }
+        &lt;/script&gt;
+    </pre>
+
+    <script>
+        // 전역변수들
+        str = '전역변수';
+        var str2 = 'var전역변수';
+
+        // window.onload = 해당 현재 이 html문서가 다 로딩되고 나서 곧바로 실행할 함수를 지정하는 구문
+        window.onload = function(){
+            
+            var str = '지역변수';
+            // 전역변수명과 중복되는 문제
+            var str3 = '새로운 지역변수';
+            str4 = '내가 누구게??'
+        }
+
+    </script>
+
+</body>
+</html>

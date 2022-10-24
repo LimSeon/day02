@@ -78,7 +78,7 @@
 
     <hr>
 
-    <h3> 2) 태그명으로 가져오기</h3>
+    <h3> 2) 태그명으로 접근하기</h3>
 
     <ul>
         <li>목록1</li>
@@ -138,12 +138,12 @@
         </filedset>
     </form>
 
-    <button onclick="accessName()">name속성으로 접근</button>
+    <button onclick="accessName()">name속성으로 접근하기</button>
 
     <script>
         function accessName(){
             // name 속성값으로 요소에 접근할 때
-            // document.getElementsByName('접근하고자 하는 name 속성 값');
+            // document.getElementsByName('접근하고자 하는 name 속성값');
             // => 선택된 여래 개의 요소객체들이 배열에 담겨서 반환
 
             var hobby = document.getElementsByName('hobby'); //[근력운동checkbox, 마라톤checkbox...]
@@ -167,7 +167,8 @@
 
             // 자바스크립트에서의 boolean 형태
             // true / false
-            // 0, null, undefined, NaN, ''(빈문자열), 0.0 : false로 취급
+            // Falsy(거짓 같은 값)
+            // 0, 0.0, null, undefined, NaN, ''(빈문자열) : false로 취급
             // NaN : Not A Number
 
             // 나머지는 전부 true
@@ -186,8 +187,25 @@
     </ul>
     <pre class="test test2"></pre>
 
+    <button onclick="accessClass()">class로 접근</button>
+
+    <script>
+        function accessClass(){
+
+            // class 속성 값으로 요소를 가져올 때
+            // document.getElementsByClassName('접근하고자 하는 class 속성 값')
+            // Class가 아니라 ClassName인 것에 주의
+
+            var arr = document.getElementsByClassName('test');
+
+            console.log(arr);
+        }
+
+    </script>
+
     <br><br>
     <a href="00_index.html">인덱스로</a>
     <br><br><br><br><br><br><br><br><br><br><br><br>
+    
 </body>
 </html>
