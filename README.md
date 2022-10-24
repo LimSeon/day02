@@ -29,6 +29,7 @@ JavaScript 수업 내용 정리
         * number(숫자)
         * boolean(논리값)
         * object(객체)
+        * function(함수)
         * undefined(초기화가 아직 진행되지 않은 변수)
         
 ## 05. 문자열과 숫자
