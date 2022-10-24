@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>요소가져오기(접근하기)</title>
+    <style>
+        .area{
+            border: 1px solid black;
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML 요소에 접근하기 (해당 요소객체 가져오기)</h1>
+    
+    <h3> 1) 아이디로 접근하기 </h3>
+    <div id="area1" class="area"></div>
+    <button onclick="accessId()">아이디로 접근</button>
+
+    <script>
+        function accessId(){
+            // 아이디로 요소에 접근할 때
+            // var 변수 = document.getElementById('접근할 요소의 아이디 속성 값');
+            // 요소 객체라고 부른다.
+            var area1 = document.getElementById('area1');
+
+            console.log(area1);
+            console.dir(area1);
+
+            // 선택된 요소의 속성들에 접근해서 값을 가져온다거나 변경 가능
+            // 속성에 접근하고자 한다면 => 선택된요소객체.접근하고자하는속성명
+            area1.innerHTML = '아이디로 접근성공! <br>';    //content에 접근(innerHTML, innerText)
+            area1.innerHTML += '<mark>안녕하세요</mark>'; 
+
+            // 선택된 요소의 스타일 변경
+            // area1.style = "backgroubd : pink; color : skyblue; width : 100px";
+            area1.style.backgroundColor = 'pink';
+            area1.style.color = 'skyblue';
+            area1.style.width = '100px';
+            // 개발자 도구로 확인 시 인라인방식으로 스타일이 부여된 것을 확인할 수 있음
+            // 인라인방식은 유지보수가 어렵다는 단점이 있음
+        }
+
+    </script>
+
+    <br><br><br>
+
+    <div id="area2" class="area" style="background:red"></div>
+    <button>실습시간</button>
+
+    <br><br>
+    <a href="00_index.html">인덱스로</a>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
